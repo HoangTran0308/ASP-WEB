@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Kết quả phép tính";
+}
+
+<h2>Kết quả phép tính</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+    <p style="color:red;">@ViewBag.Message</p>
+}
+else
+{
+    <p>Kết quả là: @ViewBag.KetQua</p>
+}
+
