@@ -6,7 +6,7 @@
 @model SanPhamViewModel
 
 <h2>Thông tin sản phẩm</h2>
-<p><strong>Laptop Acer</strong> @Model.TenSanPham</p>
-<p><strong>21000000</strong> @Model.Gia VND</p>
-<img src="@Model.MoTa" alt="" />
+<p><strong>Tên sản phẩm:</strong> @ViewBag.TenSanPham</p>
+<p><strong>Gía</strong> @ViewBag.Gia VND</p>
+<img src="@ViewBag.MoTa" alt="Anh mô tả" />
 

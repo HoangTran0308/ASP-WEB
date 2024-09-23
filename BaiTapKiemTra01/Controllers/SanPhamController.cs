@@ -15,7 +15,7 @@ namespace BaiTapKiemTra01.Controllers
             {
                 ViewBag.TenSanPham = "Laptop Acer";
                 ViewBag.Gia = "21000000";
-                ViewData["MoTa"] = "/images/laptop-acer-nitro 5-tiger-2022-10_1661479517.jpg";
+                ViewData["MoTa"] = "/images/laptop-acer-nitro-5-tiger-2022-10-_1661479517.jpg";
             };
             return View(sanpham);
         }

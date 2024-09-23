@@ -7,7 +7,7 @@
         public string Password { get; set; }
         
         public string FullName { get; set; }
-        public string Old { get; set; }
+        public int Old { get; set; }
 
 
     }
