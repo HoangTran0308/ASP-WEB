@@ -1,4 +1,9 @@
 ﻿<div class="container">
+    <form asp-action="Search" method="get">
+        <input type="text" name="searchString" placeholder="Nhập thể loại cần tìm ..."
+               value="@ViewBag.SearchString"/>
+        <input type="submit" value="Tìm kiếm"/>
+    </form>
     <table class="table"
         <thead>
             <tr>
@@ -12,67 +17,14 @@
             {
                 <tr>
                     <td width="30%"> @item.Name</td>
-                    <td width="70%"> @String.Format("{0:dd/MM/yyyy}", item.DateCreated)</td>
+                    <td width="55%"> @String.Format("{0:dd/MM/yyyy}", item.DateCreated)</td>
                     <td width="40%"><a asp-action="Edit" asp-route-id="@item.Id">Edit</a> | 
-                                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> 
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-
-
-    <h2>Thể loại Id >3 </h2>
-    <table class="table"
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Tên thể loại</th>
-                <th>Ngày tạo</th>
-                <th>Chức năng</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in ViewBag.FilteredTheLoaiById)
-            {
-                <tr>
-                    <td width="30%"> @item.Id</td>
-                    <td width="30%"> @item.Name</td>
-                    <td width="70%"> @String.Format("{0:dd/MM/yyyy}", item.DateCreated)</td>
-                    <td width="40%"><a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-
-    <h2>Thể loại có Ngày Tạo trước 22/02/2222 </h2>
-    <table class="table"
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Tên thể loại</th>
-                <th>Ngày tạo</th>
-                <th>Chức năng</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in ViewBag.FilteredTheLoaiByDate)
-            {
-                <tr>
-                    <td width="30%"> @item.Id</td>
-                    <td width="30%"> @item.Name</td>
-                    <td width="70%"> @String.Format("{0:dd/MM/yyyy}", item.DateCreated)</td>
-                    <td width="40%"><a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    </td>
+                                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> </td>
                 </tr>
             }
         </tbody>
     </table>
+
     <a asp-controller="TheLoai" asp-action="Create" class="btn btn-primary">Thêm mới </a>
 </div>

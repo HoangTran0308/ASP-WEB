@@ -1,0 +1,15 @@
+﻿@model LopHoc
+
+<div class="container">
+    Id:<b>@Model.Id</b> <br />
+    Tên:<b>@Model.Name</b> <br />
+    Năm nhập Học:<b>@Model.NamNhapHoc</b> <br/>
+    Năm ra trường:<b>@Model.NamRaTruong</b> <br />
+    Số lượng sinh viên:<b>@Model.SoLuongSinhVien</b> <br />
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

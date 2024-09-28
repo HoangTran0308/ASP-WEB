@@ -1,25 +1,9 @@
 ﻿@model TheLoai
 
 <div class="container">
-    <h3> Chi tiết thể loại</h3>
-    <form method="post">
-        <div asp-validation-summary="All" class="text-danger"></div>
-        <div class="form-group">
-            <label asp-for="Name"> Tên thể loại </label>
-            <input asp-for="Name" type="text" class="form-control" />
-            <span asp-validation-for="Name" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="DateCreated"> Ngày tạo </label>
-            <input asp-for="DateCreated" type="date" class="form-control" />
-            <span asp-validation-for="DateCreated" class="text-danger"></span>
-        </div>
-
-    
-        <a asp-action="Index" class="btn btn-secondary"> Trở về danh sách </a>
-    </form>
-
+    Id:<b>@Model.Id</b> <br/> 
+    Tên:<b>@Model.Name</b> <br />
+    Ngày tạo:<b>@String.Format("{0:dd/MM/yyyy}", Model.DateCreated)</b> <br />
 </div>
 
 @section Scripts {
