@@ -10,6 +10,6 @@ namespace BaiKiemTra02.Data
             : base(options)
         {
         }
-        public DbSet<LopHoc> lopHoc { get; set; }
+        public DbSet<LopHoc> LopHoc { get; set; }
     }
 }

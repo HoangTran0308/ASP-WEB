@@ -14,7 +14,7 @@ namespace BaiKiemTra02.Controllers
         
         public IActionResult Index()
         {
-            var lophoc = _db.lopHoc.ToList();
+            var lophoc = _db.LopHoc.ToList();
             ViewBag.LopHoc = lophoc;
             return View();
         }
@@ -30,7 +30,7 @@ namespace BaiKiemTra02.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.lopHoc.Add(lophoc);
+                _db.LopHoc.Add(lophoc);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -44,7 +44,7 @@ namespace BaiKiemTra02.Controllers
             {
                 return NotFound();
             }
-            var lophoc = _db.lopHoc.Find(id);
+            var lophoc = _db.LopHoc.Find(id);
             return View(lophoc);
         }
         
@@ -53,7 +53,7 @@ namespace BaiKiemTra02.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.lopHoc.Update(lophoc);
+                _db.LopHoc.Update(lophoc);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -67,19 +67,19 @@ namespace BaiKiemTra02.Controllers
             {
                 return NotFound();
             }
-            var lophoc = _db.lopHoc.Find(id);
+            var lophoc = _db.LopHoc.Find(id);
             return View(lophoc);
         }
         
         [HttpPost]
         public IActionResult DeleteConfirm(int id)
         {
-            var lophoc = _db.lopHoc.Find(id);
+            var lophoc = _db.LopHoc.Find(id);
             if (lophoc == null)
             {
                 return NotFound();
             }
-            _db.lopHoc.Remove(lophoc);
+            _db.LopHoc.Remove(lophoc);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -92,7 +92,7 @@ namespace BaiKiemTra02.Controllers
             {
                 return NotFound();
             }
-            var lophoc = _db.lopHoc.Find(id);
+            var lophoc = _db.LopHoc.Find(id);
             return View(lophoc);
         }
         [HttpGet]
@@ -101,7 +101,7 @@ namespace BaiKiemTra02.Controllers
             if (!string.IsNullOrEmpty(searchString))
             {
                 // Sử dụng LINQ để tìm kiếm
-                var lophoc = _db.lopHoc.
+                var lophoc = _db.LopHoc.
                     Where(tl => tl.Name.Contains(searchString)).ToList();
 
                 ViewBag.SearchString = searchString;
@@ -109,7 +109,7 @@ namespace BaiKiemTra02.Controllers
             }
             else
             {
-                var lophoc = _db.lopHoc.ToList();
+                var lophoc = _db.LopHoc.ToList();
                 ViewBag.LopHoc = lophoc;
             }
 
