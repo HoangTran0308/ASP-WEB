@@ -1,10 +1,12 @@
 ﻿using Project.Data;
 using Project.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Project.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles ="Admin")]
     public class TheLoaiController : Controller
     {
         private readonly ApplicationDbContext _db;
@@ -15,12 +17,8 @@ namespace Project.Controllers
         public IActionResult Index()
         {
             var theloai = _db.TheLoai.ToList();
-            var filteredTheLoai = _db.TheLoai.Where(t => t.Id > 3).ToList();
-            var filteredByDate = _db.TheLoai.Where(t => t.DateCreated < new DateTime(2222, 02, 22)).ToList();
-            ViewBag.FilteredTheLoaiById = filteredTheLoai;
-            ViewBag.FilteredTheLoaiByDate = filteredByDate;
             ViewBag.TheLoai = theloai;
-            return View(filteredTheLoai);
+            return View();
         }
         [HttpGet]
         public IActionResult Create()

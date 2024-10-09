@@ -10,11 +10,11 @@
         "projectUniqueName": "D:\\Bài tập DNTU\\Lập Trình Web\\LTWEBASP\\ASP-WEB\\Project\\Project.csproj",
         "projectName": "Project",
         "projectPath": "D:\\Bài tập DNTU\\Lập Trình Web\\LTWEBASP\\ASP-WEB\\Project\\Project.csproj",
-        "packagesPath": "C:\\Users\\Thanh Hoang\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Hoang Tran\\.nuget\\packages\\",
         "outputPath": "D:\\Bài tập DNTU\\Lập Trình Web\\LTWEBASP\\ASP-WEB\\Project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Thanh Hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hoang Tran\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -69,6 +69,10 @@
               "version": "[8.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[8.0.8, )"
             },
